@@ -2,13 +2,13 @@ package tk.mybatis.simple.generator;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
+import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.Method;
 import org.mybatis.generator.api.dom.java.Parameter;
 import org.mybatis.generator.config.PropertyRegistry;
 import org.mybatis.generator.internal.DefaultCommentGenerator;
 import org.mybatis.generator.internal.util.StringUtility;
 
-import org.mybatis.generator.api.dom.java.Field;
 import java.util.Properties;
 
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
@@ -17,7 +17,7 @@ import static org.mybatis.generator.internal.util.StringUtility.isTrue;
  * @author Administrator
  * @date 2018/4/13
  */
-public class MyCommentGenerator extends DefaultCommentGenerator{
+public class MyCommentGenerator extends DefaultCommentGenerator {
     private boolean suppressAllComments;
 
     private boolean addRemarkComments;
@@ -35,6 +35,7 @@ public class MyCommentGenerator extends DefaultCommentGenerator{
 
     /**
      * 重写addFieldComment方法
+     *
      * @param field
      * @param introspectedTable
      * @param introspectedColumn
