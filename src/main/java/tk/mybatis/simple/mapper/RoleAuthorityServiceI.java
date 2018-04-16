@@ -1,9 +1,10 @@
 package tk.mybatis.simple.mapper;
 
-import java.util.List;
 import tk.mybatis.simple.model.entity.RoleAuthority;
 
-public interface RoleAuthorityMapper {
+import java.util.List;
+
+public interface RoleAuthorityServiceI {
 
     int deleteByPrimaryKey(Integer id);
 

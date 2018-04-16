@@ -1,10 +1,10 @@
 package tk.mybatis.simple.mapper;
 
-import java.util.List;
 import tk.mybatis.simple.model.entity.User;
-import tk.mybatis.simple.model.rest.param.UserParam;
 
-public interface UserMapper {
+import java.util.List;
+
+public interface UserServiceI {
 
     int deleteByPrimaryKey(Integer id);
 

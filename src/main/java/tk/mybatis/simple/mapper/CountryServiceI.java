@@ -1,9 +1,10 @@
 package tk.mybatis.simple.mapper;
 
-import java.util.List;
 import tk.mybatis.simple.model.entity.Country;
 
-public interface CountryMapper {
+import java.util.List;
+
+public interface CountryServiceI {
 
     int deleteByPrimaryKey(Integer id);
 
