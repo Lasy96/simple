@@ -1,4 +1,4 @@
-package tk.mybatis.simple.service.impl;
+package tk.mybatis.simple.service;
 
 /**
  * @author yuanhua
