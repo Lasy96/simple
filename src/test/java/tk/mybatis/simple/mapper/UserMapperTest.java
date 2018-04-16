@@ -20,6 +20,7 @@ public class UserMapperTest extends BaseMapperTest {
         try {
             UserServiceI userMapper = sqlSession.getMapper(UserServiceI.class);
             List<User> userList = userMapper.selectAll();
+
         } finally {
             sqlSession.close();
         }
