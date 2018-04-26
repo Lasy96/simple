@@ -2,55 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaae934a-623d-49fc-a722-993d6b23149a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/interceptor/MyInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/interceptor/PageInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/rest/param/Page.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/AuthorityServiceI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/CountryServiceI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleAuthorityServiceI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleServiceI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/UserRoleServiceI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/UserServiceI.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/Generator.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/Generator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/MyCommentGenerator.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/MyCommentGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/rest/param/UserParam.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/rest/param/UserParam.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/CountryMapperTest.class" afterPath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/CountryMapperTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/UserMapperTest.class" afterPath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/UserMapperTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_unknown.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_unknown.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_unknown.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_unknown.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_3_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/InformationMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Information.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Authority.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Authority.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Country.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Country.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Role.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Role.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/RoleAuthority.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/RoleAuthority.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/UserRole.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/UserRole.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Authority.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Authority.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Country.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/RoleAuthority.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/RoleAuthority.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/UserRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/rest/param/UserParam.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/rest/param/UserParam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/AuthorityMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/AuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/CountryMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/CountryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/RoleAuthorityMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/RoleAuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/RoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/RoleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/UserRoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/UserRoleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/BaseMapperTest.java" afterPath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/BaseMapperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/CountryMapperTest.java" afterPath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/CountryMapperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java" afterPath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/AuthorityMapper.xml" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/AuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/CountryMapper.xml" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/CountryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleAuthorityMapper.xml" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleAuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleMapper.xml" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/RoleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/UserRoleMapper.xml" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/mapper/UserRoleMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/AuthorityServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/AuthorityMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/CountryServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/CountryMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/RoleAuthorityServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/RoleAuthorityMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/RoleServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/RoleMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/UserRoleServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/UserRoleMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/UserServiceI.java" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/UserMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/UserServiceI.xml" afterPath="$PROJECT_DIR$/src/main/resources/tk/mybatis/simple/mapper/UserMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1195,7 +1163,7 @@
       <workItem from="1524472784074" duration="1673000" />
       <workItem from="1524532817144" duration="11798000" />
       <workItem from="1524618148563" duration="10943000" />
-      <workItem from="1524704305271" duration="18263000" />
+      <workItem from="1524704305271" duration="19605000" />
     </task>
     <task id="LOCAL-00001" summary=".....">
       <created>1524471898305</created>
@@ -1204,7 +1172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524471898305</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".....">
+      <created>1524732360647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524732360647</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1240,7 +1215,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166428000" />
+    <option name="totallyTimeSpent" value="167770000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
