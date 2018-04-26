@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaae934a-623d-49fc-a722-993d6b23149a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_3_5_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/Generator.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/Generator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/MyCommentGenerator.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/generator/MyCommentGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/UserMapperTest.class" afterPath="$PROJECT_DIR$/target/test-classes/tk/mybatis/simple/mapper/UserMapperTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple.iml" afterPath="$PROJECT_DIR$/simple.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/AuthorityMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/AuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/CountryMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/CountryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/RoleAuthorityMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/RoleAuthorityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -996,8 +978,16 @@
       <workItem from="1523502609990" duration="9682000" />
       <workItem from="1523582230551" duration="15161000" />
       <workItem from="1524725149468" duration="650000" />
-      <workItem from="1524732778962" duration="37000" />
+      <workItem from="1524732778962" duration="70000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1524732825546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524732825546</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1033,7 +1023,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122900000" />
+    <option name="totallyTimeSpent" value="122933000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,6 +1094,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
