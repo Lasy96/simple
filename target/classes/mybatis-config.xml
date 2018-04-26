@@ -7,11 +7,14 @@
     <settings>
         <setting name="logImpl" value="LOG4J"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
     </settings>
 
     <typeAliases>
         <package name="tk.mybatis.simple.model.entity"/>
+        <package name="tk.mybatis.simple.interceptor"/>
     </typeAliases>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC">
@@ -32,3 +35,4 @@
         <package name="tk.mybatis.simple.mapper"/>
     </mappers>
 </configuration>
+

@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.io.Reader;
 
 /**
- * Created by hxh
- * 2018/3/27.
+ * @author 袁华
+ * @date 2018/4/26 14:17
  */
 public class BaseMapperTest {
     private static SqlSessionFactory sqlSessionFactory;
