@@ -17,7 +17,6 @@ public class UserParam extends User {
      * 角色id
      */
     private int roleId;
-
     /**
      * 权限名
      */
