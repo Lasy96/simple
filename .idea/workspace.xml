@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaae934a-623d-49fc-a722-993d6b23149a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_unknown.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_3_5_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/mapper/InformationMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/mybatis/simple/model/entity/Information.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Authority.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Authority.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Country.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Country.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Role.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/RoleAuthority.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/RoleAuthority.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/UserRole.class" afterPath="$PROJECT_DIR$/target/classes/tk/mybatis/simple/model/entity/UserRole.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java" afterPath="$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageInterceptor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PageInterceptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tk/mybatis/simple/interceptor/PageInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
@@ -74,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMapperTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserMapperTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding>
                 <element signature="e#777#783#0" expanded="true" />
               </folding>
@@ -1163,7 +1148,7 @@
       <workItem from="1524472784074" duration="1673000" />
       <workItem from="1524532817144" duration="11798000" />
       <workItem from="1524618148563" duration="10943000" />
-      <workItem from="1524704305271" duration="19605000" />
+      <workItem from="1524704305271" duration="19669000" />
     </task>
     <task id="LOCAL-00001" summary=".....">
       <created>1524471898305</created>
@@ -1179,7 +1164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524732360647</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".....">
+      <created>1524733700921</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524733700921</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1215,7 +1207,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167770000" />
+    <option name="totallyTimeSpent" value="167834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1239,7 +1231,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38426965" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35171103" sideWeight="0.49614114" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35171103" sideWeight="0.49614114" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258427" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24928367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1722,16 +1714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-          <folding>
-            <element signature="e#777#783#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tk/mybatis/simple/interceptor/MyInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
@@ -1769,6 +1751,16 @@
         <state relative-caret-position="242">
           <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#777#783#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

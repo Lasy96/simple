@@ -28,7 +28,7 @@ public class UserMapperTest extends BaseMapperTest {
             page.setPageSize(2);
             List<User> userList = userMapper.findPage(page);
             page.setResults(userList);
-            System.out.println(page + "是page啊");
+            System.out.println(page + "我是page啊");
         } finally {
             sqlSession.close();
         }
