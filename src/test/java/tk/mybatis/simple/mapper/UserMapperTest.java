@@ -1,8 +1,10 @@
 package tk.mybatis.simple.mapper;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import tk.mybatis.simple.BaseMapperTest;
+import tk.mybatis.simple.interceptor.PageRowBounds;
 import tk.mybatis.simple.model.entity.User;
 import tk.mybatis.simple.model.rest.param.Page;
 
@@ -20,15 +22,23 @@ public class UserMapperTest extends BaseMapperTest {
         try {
             //获取UserMapper接口
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            //调用selectByPrimaryKey方法,查询id为1的用户
-//            MyInterceptor myInterceptor = new MyInterceptor();
-//            User user = userMapper.selectByPrimaryKey(1);
-            Page<User> page = new Page<User>();
-            page.setPage(2);
-            page.setPageSize(2);
-            List<User> userList = userMapper.findPage(page);
-            page.setResults(userList);
-            System.out.println(page + "我是page啊");
+            RowBounds rowBounds = new RowBounds(0, 1);
+            List<User> list = userMapper.selectAll(rowBounds);
+            list.forEach(user -> {
+                System.out.println(user.getUserName());
+            });
+            PageRowBounds pageRowBounds = new PageRowBounds(0, 1);
+            list = userMapper.selectAll(pageRowBounds);
+            System.out.println("查询总数" + pageRowBounds.getTotal());
+            list.forEach(user -> {
+                System.out.println(user.getUserName());
+            });
+            pageRowBounds = new PageRowBounds(1, 1);
+            list = userMapper.selectAll(pageRowBounds);
+            System.out.println("查询总数" + pageRowBounds.getTotal());
+            list.forEach(user -> {
+                System.out.println(user.getUserName());
+            });
         } finally {
             sqlSession.close();
         }

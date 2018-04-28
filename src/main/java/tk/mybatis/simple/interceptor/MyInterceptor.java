@@ -10,10 +10,6 @@ import org.apache.ibatis.session.RowBounds;
 import java.sql.Connection;
 import java.util.Properties;
 
-/**
- * @author 袁华
- * @date 2018/4/25
- */
 
 @Intercepts({
         @Signature(method = "query", type = Executor.class, args = {

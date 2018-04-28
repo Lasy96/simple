@@ -18,10 +18,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 
-/**
- * @author 袁华
- * @date 2018/4/26
- */
+
 @Intercepts({
         @Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class})
 })

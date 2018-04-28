@@ -4,10 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 袁华
- * @date 2018/4/26
- */
 public class Page<T> {
     /**
      * 页数
