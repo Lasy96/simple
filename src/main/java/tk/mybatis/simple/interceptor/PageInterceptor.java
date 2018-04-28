@@ -65,7 +65,7 @@ public class PageInterceptor implements Interceptor {
 
     private String getMysqlPageSql(Page<?> page, StringBuffer sqlBuffer) {
         int offset = (page.getPage() - 1) * page.getPageSize();
-        sqlBuffer.append("limit").append(offset).append(",").append(page.getPageSize());
+        sqlBuffer.append(" limit ").append(offset).append(",").append(page.getPageSize());
         return sqlBuffer.toString();
     }
 

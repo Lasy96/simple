@@ -16,7 +16,7 @@
     </typeAliases>
 
     <plugins>
-        <plugin interceptor="tk.mybatis.simple.interceptor.PageInterceptor">
+        <plugin interceptor="tk.mybatis.simple.interceptor.PageParam">
             <property name="dialect" value="tk.mybatis.simple.interceptor.MySqlDialect"/>
         </plugin>
     </plugins>

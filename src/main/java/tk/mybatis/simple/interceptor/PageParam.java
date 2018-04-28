@@ -19,16 +19,13 @@ import java.util.Properties;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 @Intercepts(
-        @Signature(method = "query", type = Executor.class, args = {
+        @Signature(type = Executor.class, method = "query", args = {
                 MappedStatement.class, Object.class,
                 RowBounds.class, ResultHandler.class}))
 public class PageParam implements Interceptor {
     private static final List<ResultMapping> EMPTY_RESULTMAPPING = new ArrayList<ResultMapping>(0);
     private Dialect dialect;
     private Field additionalParametersField;
-
-    public PageParam() {
-    }
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
@@ -77,23 +74,6 @@ public class PageParam implements Interceptor {
                             parameterObject,
                             rowBounds);
                 }
-            }
-            if (dialect.beforePage(ms.getId(), parameterObject, rowBounds)) {
-                CacheKey pageKey = executor.createCacheKey(
-                        ms,
-                        parameterObject,
-                        rowBounds,
-                        boundSql);
-                String pageSql = dialect.getPageSql(
-                        boundSql,
-                        parameterObject,
-                        rowBounds,
-                        pageKey);
-                BoundSql pageBoundSql = new BoundSql(
-                        ms.getConfiguration(),
-                        pageSql,
-                        boundSql.getParameterMappings(),
-                        parameterObject);
             }
             if (dialect.beforePage(ms.getId(), parameterObject, rowBounds)) {
                 CacheKey pageKey = executor.createCacheKey(

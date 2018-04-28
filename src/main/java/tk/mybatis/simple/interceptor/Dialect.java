@@ -13,7 +13,7 @@ public interface Dialect {
 
     boolean beforeCount(String msId, Object parameterObject, RowBounds rowBounds);
 
-    String getCountSql(BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey cacheKey);
+    String getCountSql(BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey countKey);
 
     void afterCount(long count, Object parameterObject, RowBounds rowBounds);
 

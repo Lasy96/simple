@@ -33,7 +33,7 @@ public class UserMapperTest extends BaseMapperTest {
             list.forEach(user -> {
                 System.out.println(user.getUserName());
             });
-            pageRowBounds = new PageRowBounds(1, 1);
+            pageRowBounds = new PageRowBounds(2, 1);
             list = userMapper.selectAll(pageRowBounds);
             System.out.println("查询总数" + pageRowBounds.getTotal());
             list.forEach(user -> {

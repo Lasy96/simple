@@ -26,7 +26,7 @@ public class MySqlDialect implements Dialect {
     }
 
     @Override
-    public String getCountSql(BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey cacheKey) {
+    public String getCountSql(BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey countKey) {
         return "select count(*) from ("+ boundSql.getSql() + ") temp";
     }
 
@@ -47,7 +47,7 @@ public class MySqlDialect implements Dialect {
     @Override
     public String getPageSql(BoundSql boundSql, Object parameterObject, RowBounds rowBounds, CacheKey pageKey) {
         pageKey.update("RowBounds");
-        return boundSql.getSql() + "limit" + rowBounds.getOffset() + "," + rowBounds.getLimit();
+        return boundSql.getSql() + " limit " + rowBounds.getOffset() + "," + rowBounds.getLimit();
     }
 
     @Override
