@@ -2,6 +2,7 @@ package com.yhl.model.dao;
 
 import com.yhl.model.entity.User;
 import com.yhl.model.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

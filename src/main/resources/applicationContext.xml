@@ -52,7 +52,7 @@
             </array>
         </property>
     </bean>
-    <!-- mapper扫描 -->
+     <!--mapper扫描-->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.yhl.model.mapper"/>
         <property name="properties">
@@ -60,10 +60,6 @@
                 mappers=tk.mybatis.mapper.common.Mapper,tk.mybatis.mapper.common.MySqlMapper
             </value>
         </property>
-    </bean>
-    <!-- sqlSession -->
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
     <!-- 包扫描,需要配置基包 -->
     <context:component-scan base-package="com.yhl"/>
