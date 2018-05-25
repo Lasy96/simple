@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="configs/jdbc.properties"/>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <package name="tk.mybatis.simple.model.entity"/>
+        <package name="tk.mybatis.simple.interceptor"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="tk.mybatis.simple.interceptor.PageParam">
+            <property name="dialect" value="tk.mybatis.simple.interceptor.MySqlDialect"/>
+        </plugin>
+    </plugins>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <property name="" value=""/>
+            </transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--<mapper resource="tk/mybatis/simple/mapper/CountryMapper.xml"/>-->
+        <!--<mapper resource="tk/mybatis/simple/mapper/UserMapper.xml"/>-->
+        <package name="tk.mybatis.simple.mapper"/>
+    </mappers>
+</configuration>
+
