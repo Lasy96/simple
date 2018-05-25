@@ -15,7 +15,6 @@ public class UserTest extends BasicTest {
 
     @Test
     public void test() {
-        System.out.println(service.getId(1));
-
+        service.getId(2);
     }
 }
