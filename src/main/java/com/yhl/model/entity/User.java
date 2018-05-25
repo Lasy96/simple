@@ -1,4 +1,4 @@
-package tk.mybatis.simple.model.entity;
+package com.yhl.model.entity;
 
 import java.util.Date;
 
