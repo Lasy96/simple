@@ -1,5 +1,6 @@
 package tk.mybatis.simple.interceptor;
 
+import com.github.pagehelper.Page;
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
@@ -8,7 +9,6 @@ import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.ParameterMapping;
 import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
-import tk.mybatis.simple.model.rest.param.Page;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -64,13 +64,13 @@ public class PageInterceptor implements Interceptor {
     }
 
     private String getMysqlPageSql(Page<?> page, StringBuffer sqlBuffer) {
-        int offset = (page.getPage() - 1) * page.getPageSize();
+        int offset = (page.getPageNum() - 1) * page.getPageSize();
         sqlBuffer.append(" limit ").append(offset).append(",").append(page.getPageSize());
         return sqlBuffer.toString();
     }
 
     private String getOraclePageSql(Page<?> page, StringBuffer sqlBuffer) {
-        int offset = (page.getPage() - 1) * page.getPageSize() + 1;
+        int offset = (page.getPageNum() - 1) * page.getPageSize() + 1;
         sqlBuffer.insert(0, "select u.*, rownum r from (").append(") u where rownum < ").append(offset + page.getPageSize());
         sqlBuffer.insert(0, "select * from (").append(") where r >= ").append(offset);
         return sqlBuffer.toString();
@@ -91,7 +91,7 @@ public class PageInterceptor implements Interceptor {
             rs = pstmt.executeQuery();
             if (rs.next()) {
                 int totalRecord = rs.getInt(1);
-                page.setTotalRecord(totalRecord);
+                page.setTotal(totalRecord);
             }
         } catch (SQLException e) {
             e.printStackTrace();
