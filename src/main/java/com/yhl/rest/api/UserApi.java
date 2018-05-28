@@ -1,4 +1,4 @@
-package com.yhl.rest;
+package com.yhl.rest.api;
 
 import com.yhl.model.entity.User;
 import com.yhl.service.UserServiceI;
@@ -11,7 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/5/25 16:08
  */
 @Path("/user")
