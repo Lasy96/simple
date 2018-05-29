@@ -33,4 +33,8 @@ public class UserDao {
     public User getByName(String name) {
         return mapper.getByName(name);
     }
+
+    public void changePassword(User user) {
+        mapper.changePassword(user);
+    }
 }

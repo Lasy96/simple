@@ -5,6 +5,12 @@ import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
 
+    /**
+     * 根据id查询用户
+     *
+     * @param id
+     * @return
+     */
     User getId(@Param("id") Integer id);
 
     /**
@@ -17,9 +23,23 @@ public interface UserMapper {
 
     /**
      * 注册
+     *
      * @param user 用户参数
      */
     void register(@Param("user") User user);
 
-    User getByName(String name);
+    /**
+     * 根据名称查询用户
+     *
+     * @param name 用户名
+     * @return 用户信息
+     */
+    User getByName(@Param("name") String name);
+
+    /**
+     * 修改密码
+     *
+     * @param user 用户密码
+     */
+    void changePassword(@Param("user") User user);
 }

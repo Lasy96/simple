@@ -34,4 +34,12 @@
         ( #{user.userName}, #{user.password}, #{user.salt}, #{user.createTime} )
     </insert>
 
+    <update id="changePassword">
+        UPDATE `user`
+        SET `password` = #{user.password},
+        salt = #{user.salt}
+        WHERE
+        id = #{user.id}
+    </update>
+
 </mapper>

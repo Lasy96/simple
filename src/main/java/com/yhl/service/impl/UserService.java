@@ -5,6 +5,7 @@ import com.yhl.framwork.utils.MD5Util;
 import com.yhl.framwork.utils.MathUtil;
 import com.yhl.model.dao.UserDao;
 import com.yhl.model.entity.User;
+import com.yhl.rest.param.ChangePasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
@@ -53,16 +54,38 @@ public class UserService implements UserServiceI {
         return loginCheckout(param);
     }
 
-    public User loginCheckout(LoginParam param) {
-        User user = dao.getByName(param.getUserName());
-        if (!StringUtils.equalsIgnoreCase(user.getPassword(), MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
-            throw new DubboException("密码错误!");
+    @Override
+    public void changePassword(ChangePasswordParam param) {
+        Assert.notNull(param, "参数不能为空!");
+        Assert.notNull(param.getId(), "用户id不能为空!");
+        User getId = getId(param.getId());
+        if (getId == null) {
+            throw new DubboException("用户不存在!");
         }
-        return user;
+        Assert.notNull(param.getOldPassword(), "原密码不能为空!");
+        Assert.notNull(param.getNewPassword(), "新密码不能为空!");
+        Assert.notNull(param.getPasswordAgain(), "确认密码不能为空!");
+        LoginParam loginParam = new LoginParam();
+        loginParam.setUserName(getId.getUserName());
+        loginParam.setPassword(param.getOldPassword());
+        loginCheckout(loginParam);
+        User user = new User();
+        user.setId(param.getId());
+        user.setSalt(MathUtil.getRandomString(6));
+        user.setPassword(MD5Util.getMD5ofStr(param.getNewPassword() + user.getSalt()));
+        dao.changePassword(user);
     }
 
     @Override
     public User getId(Integer id) {
         return dao.getId(id);
+    }
+
+    private User loginCheckout(LoginParam param) {
+        User user = dao.getByName(param.getUserName());
+        if (!StringUtils.equalsIgnoreCase(user.getPassword(), MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
+            throw new DubboException("密码错误!");
+        }
+        return user;
     }
 }

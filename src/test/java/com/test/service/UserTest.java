@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.BasicTest;
+import com.yhl.rest.param.ChangePasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
@@ -22,9 +23,15 @@ public class UserTest extends BasicTest {
 //        param.setPassword("123456");
 //        param.setPasswordAgain("123456");
 //        service.register(param);
-        LoginParam param = new LoginParam();
-        param.setUserName("郑和");
-        param.setPassword("123422");
-        service.login(param);
+//        LoginParam param = new LoginParam();
+//        param.setUserName("郑和");
+//        param.setPassword("123422");
+//        service.login(param);
+        ChangePasswordParam param = new ChangePasswordParam();
+        param.setId(22);
+        param.setOldPassword("123456");
+        param.setNewPassword("654321");
+        param.setPasswordAgain("123456");
+        service.changePassword(param);
     }
 }

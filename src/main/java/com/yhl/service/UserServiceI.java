@@ -1,6 +1,7 @@
 package com.yhl.service;
 
 import com.yhl.model.entity.User;
+import com.yhl.rest.param.ChangePasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 
@@ -16,7 +17,19 @@ public interface UserServiceI {
      */
     void register(RegisterParam param);
 
+    /**
+     * 登录
+     *
+     * @param param 登录参数
+     * @return 用户信息
+     */
     User login(LoginParam param);
+
+    /**
+     * 修改密码
+     * @param param 密码
+     */
+    void changePassword(ChangePasswordParam param);
 
     /**
      * 根据id查询用户
