@@ -28,7 +28,7 @@ public class UserApi {
     @Path("/getId/{id}")
     @ApiOperation(value = "根据id查询用户信息")
     @Authority({AuthType.所有权限})
-    public User getPayByDay(@PathParam("id") Integer id) {
+    public User getId(@PathParam("id") Integer id) {
         return service.getId(id);
     }
 }

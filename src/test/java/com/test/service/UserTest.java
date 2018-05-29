@@ -1,7 +1,8 @@
 package com.test.service;
 
 import com.test.BasicTest;
-import com.yhl.rest.param.UserParam;
+import com.yhl.rest.param.LoginParam;
+import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,14 @@ public class UserTest extends BasicTest {
 
     @Test
     public void test() {
-//        service.getId(2);
-        UserParam param = new UserParam();
-        param.setUserName("和");
-        param.setPassword("123456");
-        param.setPasswordAgain("123456");
-        service.register(param);
+//        RegisterParam param = new RegisterParam();
+//        param.setUserName("郑鹤");
+//        param.setPassword("123456");
+//        param.setPasswordAgain("123456");
+//        service.register(param);
+        LoginParam param = new LoginParam();
+        param.setUserName("郑和");
+        param.setPassword("123422");
+        service.login(param);
     }
 }
