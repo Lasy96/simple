@@ -30,7 +30,7 @@ public class UserTest extends BasicTest {
         ChangePasswordParam param = new ChangePasswordParam();
         param.setId(22);
         param.setOldPassword("123456");
-        param.setNewPassword("654321");
+        param.setNewPassword("123456");
         param.setPasswordAgain("123456");
         service.changePassword(param);
     }

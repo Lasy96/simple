@@ -59,16 +59,19 @@ public class UserService implements UserServiceI {
         Assert.notNull(param, "参数不能为空!");
         Assert.notNull(param.getId(), "用户id不能为空!");
         User getId = getId(param.getId());
-        if (getId == null) {
-            throw new DubboException("用户不存在!");
-        }
         Assert.notNull(param.getOldPassword(), "原密码不能为空!");
         Assert.notNull(param.getNewPassword(), "新密码不能为空!");
         Assert.notNull(param.getPasswordAgain(), "确认密码不能为空!");
+        if (!param.getNewPassword().equals(param.getPasswordAgain())) {
+            throw new DubboException("两次密码不一致!");
+        }
         LoginParam loginParam = new LoginParam();
         loginParam.setUserName(getId.getUserName());
         loginParam.setPassword(param.getOldPassword());
-        loginCheckout(loginParam);
+        User loginCheckout = loginCheckout(loginParam);
+        if (StringUtils.equalsIgnoreCase(loginCheckout.getPassword(), MD5Util.getMD5ofStr(param.getNewPassword() + loginCheckout.getSalt()))) {
+            throw new DubboException("密码与最近一次密码相同!");
+        }
         User user = new User();
         user.setId(param.getId());
         user.setSalt(MathUtil.getRandomString(6));
@@ -83,6 +86,9 @@ public class UserService implements UserServiceI {
 
     private User loginCheckout(LoginParam param) {
         User user = dao.getByName(param.getUserName());
+        if (user == null) {
+            throw new DubboException("用户不存在!");
+        }
         if (!StringUtils.equalsIgnoreCase(user.getPassword(), MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
             throw new DubboException("密码错误!");
         }
