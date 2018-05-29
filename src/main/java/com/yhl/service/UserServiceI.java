@@ -1,7 +1,8 @@
 package com.yhl.service;
 
 import com.yhl.model.entity.User;
-import com.yhl.rest.param.UserParam;
+import com.yhl.rest.param.LoginParam;
+import com.yhl.rest.param.RegisterParam;
 
 /**
  * @author Lasy
@@ -13,7 +14,9 @@ public interface UserServiceI {
      *
      * @param param 用户注册参数
      */
-    void register(UserParam param);
+    void register(RegisterParam param);
+
+    User login(LoginParam param);
 
     /**
      * 根据id查询用户

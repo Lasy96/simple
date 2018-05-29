@@ -5,8 +5,10 @@ import com.yhl.framwork.utils.MD5Util;
 import com.yhl.framwork.utils.MathUtil;
 import com.yhl.model.dao.UserDao;
 import com.yhl.model.entity.User;
-import com.yhl.rest.param.UserParam;
+import com.yhl.rest.param.LoginParam;
+import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -23,7 +25,7 @@ public class UserService implements UserServiceI {
     private UserDao dao;
 
     @Override
-    public void register(UserParam param) {
+    public void register(RegisterParam param) {
         Assert.notNull(param, "参数不能为空!");
         Assert.notNull(param.getUserName(), "用户名不能为空!");
         Assert.notNull(param.getPassword(), "密码不能为空!");
@@ -41,6 +43,22 @@ public class UserService implements UserServiceI {
         user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         user.setCreateTime(new Date());
         dao.register(user);
+    }
+
+    @Override
+    public User login(LoginParam param) {
+        Assert.notNull(param, "参数不能为空!");
+        Assert.notNull(param.getUserName(), "账号不能为空!");
+        Assert.notNull(param.getPassword(), "密码不能为空!");
+        return loginCheckout(param);
+    }
+
+    public User loginCheckout(LoginParam param) {
+        User user = dao.getByName(param.getUserName());
+        if (!StringUtils.equalsIgnoreCase(user.getPassword(), MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
+            throw new DubboException("密码错误!");
+        }
+        return user;
     }
 
     @Override

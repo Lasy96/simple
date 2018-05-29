@@ -20,4 +20,6 @@ public interface UserMapper {
      * @param user 用户参数
      */
     void register(@Param("user") User user);
+
+    User getByName(String name);
 }
