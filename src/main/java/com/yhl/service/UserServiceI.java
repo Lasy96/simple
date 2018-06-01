@@ -2,6 +2,7 @@ package com.yhl.service;
 
 import com.yhl.model.entity.User;
 import com.yhl.rest.param.ChangePasswordParam;
+import com.yhl.rest.param.FindPasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 
@@ -27,6 +28,7 @@ public interface UserServiceI {
 
     /**
      * 修改密码
+     *
      * @param param 密码
      */
     void changePassword(ChangePasswordParam param);
@@ -38,4 +40,18 @@ public interface UserServiceI {
      * @return 用户信息
      */
     User getId(Integer id);
+
+    /**
+     * 找回密码
+     *
+     * @param param 找回密码参数
+     */
+    void findPasswordOne(FindPasswordParam param);
+
+    /**
+     * 找回密码第二步
+     *
+     * @param param 找回密码参数
+     */
+    void findPasswordTwo(FindPasswordParam param);
 }

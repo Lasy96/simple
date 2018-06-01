@@ -1,6 +1,7 @@
 package com.yhl.rest.param;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
@@ -10,9 +11,13 @@ import java.io.Serializable;
  */
 @ApiModel("修改密码参数")
 public class ChangePasswordParam implements Serializable {
+    @ApiModelProperty("用户id")
     private Integer id;
+    @ApiModelProperty("旧密码")
     private String oldPassword;
+    @ApiModelProperty("新密码")
     private String newPassword;
+    @ApiModelProperty("确认密码")
     private String passwordAgain;
 
     public Integer getId() {

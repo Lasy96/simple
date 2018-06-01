@@ -6,6 +6,7 @@ import com.yhl.framwork.utils.MathUtil;
 import com.yhl.model.dao.UserDao;
 import com.yhl.model.entity.User;
 import com.yhl.rest.param.ChangePasswordParam;
+import com.yhl.rest.param.FindPasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
@@ -82,6 +83,33 @@ public class UserService implements UserServiceI {
     @Override
     public User getId(Integer id) {
         return dao.getId(id);
+    }
+
+    @Override
+    public void findPasswordOne(FindPasswordParam param) {
+        Assert.notNull(param, "参数不能为空!");
+        Assert.notNull(param.getName(), "用户名不能为空!");
+        User user = dao.getByName(param.getName());
+        if (user == null) {
+            throw new DubboException("用户不存在!");
+        }
+        Assert.notNull(param.getMail(), "邮箱不能为空!");
+        Assert.notNull(param.getCode(), "验证码不能为空!");
+    }
+
+    @Override
+    public void findPasswordTwo(FindPasswordParam param) {
+        Assert.notNull(param, "参数不能为空!");
+        Assert.notNull(param.getPassword(), "密码不能为空!");
+        Assert.notNull(param.getPasswordAgain(), "二次密码不能为空!");
+        if (param.getPassword().equals(param.getPasswordAgain())) {
+            throw new DubboException("两次密码不一致!");
+        }
+        User user = new User();
+        user.setId(param.getId());
+        user.setSalt(MathUtil.getRandomString(6));
+        user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
+        dao.changePassword(user);
     }
 
     private User loginCheckout(LoginParam param) {

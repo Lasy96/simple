@@ -1,7 +1,10 @@
 package com.yhl.rest.param;
 
+import com.yhl.framwork.utils.MailUtil;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+import javax.mail.MessagingException;
 import java.io.Serializable;
 
 /**
@@ -10,15 +13,10 @@ import java.io.Serializable;
  */
 @ApiModel("登录参数")
 public class LoginParam implements Serializable {
+    @ApiModelProperty("用户名")
     private String userName;
+    @ApiModelProperty("密码")
     private String password;
-    public static void main(String[] args) {
-        String stringList = "qweasdasdc,,adzxcdasd";
-        String[] stringListSplit = stringList.split(",");
-        for (String s : stringListSplit) {
-            System.out.println(s);
-        }
-    }
 
     public String getUserName() {
         return userName;
@@ -35,4 +33,14 @@ public class LoginParam implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public static void main(String[] args) {
+        try {
+                MailUtil.sendMail("563189288@qq.com", "一个文本");
+                System.out.println("成功");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

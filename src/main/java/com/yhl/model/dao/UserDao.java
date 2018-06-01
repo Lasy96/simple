@@ -1,9 +1,7 @@
 package com.yhl.model.dao;
 
-import com.alibaba.dubbo.rpc.exception.DubboException;
 import com.yhl.model.entity.User;
 import com.yhl.model.mapper.UserMapper;
-import com.yhl.rest.param.LoginParam;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -27,7 +25,7 @@ public class UserDao {
     }
 
     public void register(User user) {
-         mapper.register(user);
+        mapper.register(user);
     }
 
     public User getByName(String name) {
