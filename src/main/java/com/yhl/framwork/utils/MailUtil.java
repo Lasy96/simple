@@ -23,14 +23,14 @@ public class MailUtil {
         //端口号，QQ邮箱给出了两个端口，但是另一个我一直使用不了，所以就给出这一个587
         properties.put("mail.smtp.port", "587");
         // 账号
-        properties.put("mail.user", MailConstant.user);
+        properties.put("mail.user", MailConstant.USER);
         // 16位STMP口令
-        properties.put("mail.password", MailConstant.password);
+        properties.put("mail.password", MailConstant.PASSWORD);
         // 构建授权信息，用于进行SMTP进行身份验证
         Authenticator authenticator = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 // 用户名和密码
-                return new PasswordAuthentication(MailConstant.user, MailConstant.password);
+                return new PasswordAuthentication(MailConstant.USER, MailConstant.PASSWORD);
             }
         };
         // 使用环境属性和授权信息，创建邮件会话
@@ -38,7 +38,7 @@ public class MailUtil {
         // 创建邮件消息
         MimeMessage message = new MimeMessage(mailSession);
         // 设置发件人
-        message.setFrom(new InternetAddress(MailConstant.user));
+        message.setFrom(new InternetAddress(MailConstant.USER));
         // 设置收件人的邮箱
         message.setRecipient(RecipientType.TO, new InternetAddress(to));
         // 设置邮件标题
