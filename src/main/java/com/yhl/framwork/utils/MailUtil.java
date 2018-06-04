@@ -10,11 +10,11 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/6/1 15:56
  */
 public class MailUtil {
-    public static void sendMail(String to, String text) throws MessagingException {
+    public static void sendMail(String to, String text, String title) throws MessagingException {
         Properties properties = new Properties();
         // 表示SMTP发送邮件，必须进行身份验证
         properties.put("mail.smtp.auth", "true");
@@ -42,7 +42,7 @@ public class MailUtil {
         // 设置收件人的邮箱
         message.setRecipient(RecipientType.TO, new InternetAddress(to));
         // 设置邮件标题
-        message.setSubject("测试邮件");
+        message.setSubject(title);
         // 设置邮件的内容体
         message.setContent(text, "text/html;charset=UTF-8");
         // 发送邮件

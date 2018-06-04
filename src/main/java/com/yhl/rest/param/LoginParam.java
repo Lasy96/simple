@@ -36,7 +36,7 @@ public class LoginParam implements Serializable {
 
     public static void main(String[] args) {
         try {
-                MailUtil.sendMail("563189288@qq.com", "一个文本");
+                MailUtil.sendMail("563189288@qq.com", "一个文本", "");
                 System.out.println("成功");
         } catch (MessagingException e) {
             e.printStackTrace();

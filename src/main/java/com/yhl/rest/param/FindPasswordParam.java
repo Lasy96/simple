@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/5/31 16:53
  */
 @ApiModel("找回密码")
