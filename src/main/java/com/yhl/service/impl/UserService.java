@@ -2,6 +2,7 @@ package com.yhl.service.impl;
 
 import com.alibaba.dubbo.rpc.exception.DubboException;
 import com.yhl.framwork.utils.MD5Util;
+import com.yhl.framwork.utils.MailUtil;
 import com.yhl.framwork.utils.MathUtil;
 import com.yhl.model.dao.UserDao;
 import com.yhl.model.entity.User;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import javax.mail.MessagingException;
 import java.util.Date;
 
 /**
@@ -86,7 +88,7 @@ public class UserService implements UserServiceI {
     }
 
     @Override
-    public void findPasswordOne(FindPasswordParam param) {
+    public FindPasswordParam findPasswordOne(FindPasswordParam param) {
         Assert.notNull(param, "参数不能为空!");
         Assert.notNull(param.getName(), "用户名不能为空!");
         User user = dao.getByName(param.getName());
@@ -95,6 +97,17 @@ public class UserService implements UserServiceI {
         }
         Assert.notNull(param.getMail(), "邮箱不能为空!");
         Assert.notNull(param.getCode(), "验证码不能为空!");
+        String code = MathUtil.getRandomString(6);
+        try {
+            MailUtil.sendMail(param.getMail(), code, "验证码");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        if (!code.equals(param.getCode())) {
+            throw new DubboException("验证码错误!");
+        }
+        param.setId(user.getId());
+        return param;
     }
 
     @Override

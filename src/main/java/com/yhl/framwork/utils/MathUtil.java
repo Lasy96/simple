@@ -10,9 +10,8 @@ public class MathUtil {
     /**
      * 随机生成字符串
      *
-     * @param length
-     *            想要生成的长度
-     * @return
+     * @param length 想要生成的长度
+     * @return 结果
      */
     public static String getRandomString(int length) {
         return getRandomString(length, "abcdefghijklmnopqrstuvwxyz");
@@ -21,13 +20,11 @@ public class MathUtil {
     /**
      * 随机生成字符串
      *
-     * @param length
-     *            想要生成的长度
-     * @param base
-     *            字符集
-     * @return
+     * @param length 想要生成的长度
+     * @param base   字符集
+     * @return 结果
      */
-    public static String getRandomString(int length, String base) {
+    private static String getRandomString(int length, String base) {
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < length; i++) {
