@@ -49,6 +49,13 @@ public interface UserServiceI {
     FindPasswordParam findPasswordOne(FindPasswordParam param);
 
     /**
+     * 发送邮箱
+     *
+     * @param param 邮箱号
+     */
+    void sendEmail(FindPasswordParam param);
+
+    /**
      * 找回密码第二步
      *
      * @param param 找回密码参数

@@ -19,9 +19,9 @@ public class MailUtil {
         // 表示SMTP发送邮件，必须进行身份验证
         properties.put("mail.smtp.auth", "true");
         // SMTP服务器
-        properties.put("mail.smtp.host", "smtp.qq.com");
-        //端口号，QQ邮箱给出了两个端口，但是另一个我一直使用不了，所以就给出这一个587
-        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.host", MailConstant.HOST);
+        // 端口号
+        properties.put("mail.smtp.port", MailConstant.PORT);
         // 账号
         properties.put("mail.user", MailConstant.USER);
         // 16位STMP口令

@@ -11,6 +11,7 @@ import com.yhl.rest.param.FindPasswordParam;
 import com.yhl.rest.param.LoginParam;
 import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
+import com.yhl.utilConstant.MailConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -87,27 +88,51 @@ public class UserService implements UserServiceI {
         return dao.getId(id);
     }
 
+    // 获取用户名
+    public static String userName = null;
+
     @Override
     public FindPasswordParam findPasswordOne(FindPasswordParam param) {
         Assert.notNull(param, "参数不能为空!");
         Assert.notNull(param.getName(), "用户名不能为空!");
+        Assert.notNull(param.getMail(), "邮箱不能为空!");
         User user = dao.getByName(param.getName());
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
-        Assert.notNull(param.getMail(), "邮箱不能为空!");
-        Assert.notNull(param.getCode(), "验证码不能为空!");
-        String code = MathUtil.getRandomString(6);
-        try {
-            MailUtil.sendMail(param.getMail(), code, "验证码");
-        } catch (MessagingException e) {
-            e.printStackTrace();
+        if (user.getMail().equals("") || !user.getMail().equals(param.getMail())) {
+            throw new DubboException("邮箱不正确!");
         }
-        if (!code.equals(param.getCode())) {
+        Assert.notNull(param.getCode(), "验证码不能为空!");
+        if (!MailConstant.CODE.equals(param.getCode())) {
             throw new DubboException("验证码错误!");
         }
         param.setId(user.getId());
         return param;
+    }
+
+    // 邮箱验证
+    @Override
+    public void sendEmail(FindPasswordParam param) {
+        Assert.notNull(param, "参数不能为空!");
+        Assert.notNull(param.getName(), "用户名不能为空!");
+        Assert.notNull(param.getMail(), "邮箱不能为空!");
+        User user = dao.getByName(param.getName());
+        if (user == null) {
+            throw new DubboException("用户不存在!");
+        }
+        if (user.getMail().equals("")) {
+            throw new DubboException("该用户没有绑定邮箱!");
+        }
+        if (!user.getMail().equals(param.getMail())) {
+            throw new DubboException("邮箱不正确!");
+        }
+        userName = user.getUserName();
+        try {
+            MailUtil.sendMail(param.getMail(), MailConstant.CODE, "验证码");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
