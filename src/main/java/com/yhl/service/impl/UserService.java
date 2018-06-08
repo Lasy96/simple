@@ -44,7 +44,7 @@ public class UserService implements UserServiceI {
         }
         User user = new User();
         user.setUserName(param.getUserName());
-        user.setSalt(MathUtil.getRandomString(6));
+        user.setSalt(MathUtil.getRandomString(6, 1));
         user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         user.setCreateTime(new Date());
         dao.register(user);
@@ -78,7 +78,7 @@ public class UserService implements UserServiceI {
         }
         User user = new User();
         user.setId(param.getId());
-        user.setSalt(MathUtil.getRandomString(6));
+        user.setSalt(MathUtil.getRandomString(6, 1));
         user.setPassword(MD5Util.getMD5ofStr(param.getNewPassword() + user.getSalt()));
         dao.changePassword(user);
     }
@@ -104,7 +104,7 @@ public class UserService implements UserServiceI {
             throw new DubboException("邮箱不正确!");
         }
         Assert.notNull(param.getCode(), "验证码不能为空!");
-        if (!MailConstant.CODE.equals(param.getCode())) {
+        if (!MailConstant.code.equals(param.getCode())) {
             throw new DubboException("验证码错误!");
         }
         param.setId(user.getId());
@@ -129,7 +129,7 @@ public class UserService implements UserServiceI {
         }
         userName = user.getUserName();
         try {
-            MailUtil.sendMail(param.getMail(), MailConstant.CODE, "验证码");
+            MailUtil.sendMail(param.getMail(), MailConstant.CONTENT, "林中夕阳");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
@@ -145,7 +145,7 @@ public class UserService implements UserServiceI {
         }
         User user = new User();
         user.setId(param.getId());
-        user.setSalt(MathUtil.getRandomString(6));
+        user.setSalt(MathUtil.getRandomString(6, 1));
         user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         dao.changePassword(user);
     }

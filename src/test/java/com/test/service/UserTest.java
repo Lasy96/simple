@@ -1,10 +1,7 @@
 package com.test.service;
 
 import com.test.BasicTest;
-import com.yhl.rest.param.ChangePasswordParam;
 import com.yhl.rest.param.FindPasswordParam;
-import com.yhl.rest.param.LoginParam;
-import com.yhl.rest.param.RegisterParam;
 import com.yhl.service.UserServiceI;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +32,8 @@ public class UserTest extends BasicTest {
 //        param.setPasswordAgain("654321");
 //        service.changePassword(param);
         FindPasswordParam param = new FindPasswordParam();
-        param.setName("46157897897546437866456789987913456");
-        param.setMail("522211279657125468797456898@qq.com");
+        param.setName("123124314123123");
+        param.setMail("1234513233123123@qq.com");
         service.sendEmail(param);
     }
 }
