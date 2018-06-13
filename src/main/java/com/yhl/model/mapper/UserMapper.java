@@ -3,8 +3,9 @@ package com.yhl.model.mapper;
 import com.yhl.model.entity.User;
 import org.apache.ibatis.annotations.Param;
 
-public interface UserMapper {
+import java.util.List;
 
+public interface UserMapper {
     /**
      * 根据id查询用户
      *

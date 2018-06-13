@@ -12,18 +12,18 @@ import java.io.Serializable;
 @ApiModel("用户注册参数")
 public class RegisterParam implements Serializable {
     @ApiModelProperty("用户名")
-    private String userName;
+    private String name;
     @ApiModelProperty("密码")
     private String password;
     @ApiModelProperty("第二次密码")
     private String passwordAgain;
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {

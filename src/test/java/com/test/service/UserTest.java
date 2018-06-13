@@ -17,12 +17,12 @@ public class UserTest extends BasicTest {
     @Test
     public void test() {
 //        RegisterParam param = new RegisterParam();
-//        param.setUserName("郑鹤");
+//        param.setName("郑鹤");
 //        param.setPassword("123456");
 //        param.setPasswordAgain("123456");
 //        service.register(param);
 //        LoginParam param = new LoginParam();
-//        param.setUserName("郑和");
+//        param.setName("郑和");
 //        param.setPassword("123422");
 //        service.login(param);
 //        ChangePasswordParam param = new ChangePasswordParam();
@@ -32,8 +32,23 @@ public class UserTest extends BasicTest {
 //        param.setPasswordAgain("654321");
 //        service.changePassword(param);
         FindPasswordParam param = new FindPasswordParam();
-        param.setName("123124314123123");
-        param.setMail("1234513233123123@qq.com");
+        param.setName("笨蛋⑨");
+        param.setMail("1539020463@qq.com");
         service.sendEmail(param);
+    }
+
+
+
+    public static void main(String[] args) {
+        int line = 6;
+        for (int i = 0; i < line - 1; i++) {
+            for (int j = 0; j < line - 1 - i; j++) {
+                System.out.print("1");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
