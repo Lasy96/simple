@@ -32,8 +32,8 @@ public class UserTest extends BasicTest {
 //        param.setPasswordAgain("654321");
 //        service.changePassword(param);
         FindPasswordParam param = new FindPasswordParam();
-        param.setName("笨蛋⑨");
-        param.setMail("1539020463@qq.com");
+        param.setName("23123213213");
+        param.setMail("12312321312332313@qq.com");
         service.sendEmail(param);
     }
 
