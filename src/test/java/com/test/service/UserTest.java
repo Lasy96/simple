@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.BasicTest;
+import com.yhl.rest.param.ChangePasswordParam;
 import com.yhl.rest.param.FindPasswordParam;
 import com.yhl.service.UserServiceI;
 import org.junit.Test;
@@ -17,23 +18,23 @@ public class UserTest extends BasicTest {
     @Test
     public void test() {
 //        RegisterParam param = new RegisterParam();
-//        param.setName("郑鹤");
+//        param.setNikeName("郑鹤");
 //        param.setPassword("123456");
 //        param.setPasswordAgain("123456");
 //        service.register(param);
 //        LoginParam param = new LoginParam();
-//        param.setName("郑和");
+//        param.setNikeName("郑和");
 //        param.setPassword("123422");
 //        service.login(param);
 //        ChangePasswordParam param = new ChangePasswordParam();
-//        param.setId(22);
+//        param.setId(15);
 //        param.setOldPassword("654321");
-//        param.setNewPassword("654321");
-//        param.setPasswordAgain("654321");
+//        param.setNewPassword("123456");
+//        param.setPasswordAgain("123456");
 //        service.changePassword(param);
         FindPasswordParam param = new FindPasswordParam();
-        param.setName("23123213213");
-        param.setMail("12312321312332313@qq.com");
+        param.setNikeName("林中夕阳");
+        param.setMail("1054795648@qq.com");
         service.sendEmail(param);
     }
 

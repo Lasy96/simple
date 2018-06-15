@@ -3,16 +3,18 @@ package com.yhl.rest.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+
 /**
  * @author Lasy
  * @date 2018/5/31 16:53
  */
 @ApiModel("找回密码")
-public class FindPasswordParam {
+public class FindPasswordParam implements Serializable {
     @ApiModelProperty("用户id")
     private Integer id;
     @ApiModelProperty("用户名")
-    private String name;
+    private String nikeName;
     @ApiModelProperty("邮箱")
     private String mail;
     @ApiModelProperty("验证码")
@@ -30,12 +32,12 @@ public class FindPasswordParam {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNikeName() {
+        return nikeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNikeName(String nikeName) {
+        this.nikeName = nikeName;
     }
 
     public String getMail() {

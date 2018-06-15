@@ -14,6 +14,14 @@ import java.util.Properties;
  * @date 2018/6/1 15:56
  */
 public class MailUtil {
+    /**
+     * 发送邮件
+     *
+     * @param to    目标邮箱地址
+     * @param text  内容
+     * @param title 标题
+     * @throws MessagingException
+     */
     public static void sendMail(String to, String text, String title) throws MessagingException {
         Properties properties = new Properties();
         // 表示SMTP发送邮件，必须进行身份验证

@@ -32,18 +32,18 @@ public class UserService implements UserServiceI {
     @Override
     public void register(RegisterParam param) {
         Assert.notNull(param, "参数不能为空!");
-        Assert.notNull(param.getName(), "用户名不能为空!");
+        Assert.notNull(param.getNikeName(), "用户名不能为空!");
         Assert.notNull(param.getPassword(), "密码不能为空!");
         Assert.notNull(param.getPasswordAgain(), "二次密码不能为空!");
         if (!param.getPasswordAgain().equals(param.getPassword())) {
             throw new DubboException("两次密码不一致!");
         }
-        Integer getName = dao.getName(param.getName());
+        Integer getName = dao.getName(param.getNikeName());
         if (getName > 0) {
             throw new DubboException("用户名已存在!");
         }
         User user = new User();
-        user.setName(param.getName());
+        user.setName(param.getNikeName());
         user.setSalt(MathUtil.getRandomString(6, 1));
         user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         user.setCreateTime(new Date());
@@ -53,7 +53,7 @@ public class UserService implements UserServiceI {
     @Override
     public User login(LoginParam param) {
         Assert.notNull(param, "参数不能为空!");
-        Assert.notNull(param.getName(), "账号不能为空!");
+        Assert.notNull(param.getNikeName(), "账号不能为空!");
         Assert.notNull(param.getPassword(), "密码不能为空!");
         return loginCheckout(param);
     }
@@ -70,7 +70,7 @@ public class UserService implements UserServiceI {
             throw new DubboException("两次密码不一致!");
         }
         LoginParam loginParam = new LoginParam();
-        loginParam.setName(getId.getName());
+        loginParam.setNikeName(getId.getNikeName());
         loginParam.setPassword(param.getOldPassword());
         User loginCheckout = loginCheckout(loginParam);
         if (StringUtils.equalsIgnoreCase(loginCheckout.getPassword(), MD5Util.getMD5ofStr(param.getNewPassword() + loginCheckout.getSalt()))) {
@@ -94,9 +94,9 @@ public class UserService implements UserServiceI {
     @Override
     public FindPasswordParam findPasswordOne(FindPasswordParam param) {
         Assert.notNull(param, "参数不能为空!");
-        Assert.notNull(param.getName(), "用户名不能为空!");
+        Assert.notNull(param.getNikeName(), "用户名不能为空!");
         Assert.notNull(param.getMail(), "邮箱不能为空!");
-        User user = dao.getByName(param.getName());
+        User user = dao.getByName(param.getNikeName());
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
@@ -115,9 +115,9 @@ public class UserService implements UserServiceI {
     @Override
     public void sendEmail(FindPasswordParam param) {
         Assert.notNull(param, "参数不能为空!");
-        Assert.notNull(param.getName(), "用户名不能为空!");
+        Assert.notNull(param.getNikeName(), "用户名不能为空!");
         Assert.notNull(param.getMail(), "邮箱不能为空!");
-        User user = dao.getByName(param.getName());
+        User user = dao.getByName(param.getNikeName());
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
@@ -151,7 +151,7 @@ public class UserService implements UserServiceI {
     }
 
     private User loginCheckout(LoginParam param) {
-        User user = dao.getByName(param.getName());
+        User user = dao.getByName(param.getNikeName());
         if (user == null) {
             throw new DubboException("用户不存在!");
         }

@@ -35,7 +35,7 @@ public interface UserMapper {
      * @param name 用户名
      * @return 用户信息
      */
-    User getByName(@Param("name") String name);
+    User getByName(@Param("nikeName") String name);
 
     /**
      * 修改密码
