@@ -1,4 +1,4 @@
-package com.yhl.rest.param;
+package com.yhl.rest.param.user;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

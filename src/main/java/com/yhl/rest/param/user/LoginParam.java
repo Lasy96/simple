@@ -1,4 +1,4 @@
-package com.yhl.rest.param;
+package com.yhl.rest.param.user;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,16 +7,14 @@ import java.io.Serializable;
 
 /**
  * @author Lasy
- * @date 2018/5/28 16:21
+ * @date 2018/5/29 15:25
  */
-@ApiModel("用户注册参数")
-public class RegisterParam implements Serializable {
+@ApiModel("登录参数")
+public class LoginParam implements Serializable {
     @ApiModelProperty("用户名")
     private String nikeName;
     @ApiModelProperty("密码")
     private String password;
-    @ApiModelProperty("第二次密码")
-    private String passwordAgain;
 
     public String getNikeName() {
         return nikeName;
@@ -34,11 +32,5 @@ public class RegisterParam implements Serializable {
         this.password = password;
     }
 
-    public String getPasswordAgain() {
-        return passwordAgain;
-    }
-
-    public void setPasswordAgain(String passwordAgain) {
-        this.passwordAgain = passwordAgain;
-    }
 }
+ 

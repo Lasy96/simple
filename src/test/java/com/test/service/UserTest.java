@@ -1,8 +1,6 @@
 package com.test.service;
 
 import com.test.BasicTest;
-import com.yhl.rest.param.ChangePasswordParam;
-import com.yhl.rest.param.FindPasswordParam;
 import com.yhl.service.UserServiceI;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

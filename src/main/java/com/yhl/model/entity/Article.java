@@ -31,6 +31,8 @@ public class Article implements Serializable {
      */
     private String content;
 
+    private Integer userId;
+
     /**
      * 作者
      */
@@ -134,6 +136,14 @@ public class Article implements Serializable {
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**

@@ -1,10 +1,10 @@
 package com.yhl.service;
 
 import com.yhl.model.entity.User;
-import com.yhl.rest.param.ChangePasswordParam;
-import com.yhl.rest.param.FindPasswordParam;
-import com.yhl.rest.param.LoginParam;
-import com.yhl.rest.param.RegisterParam;
+import com.yhl.rest.param.user.ChangePasswordParam;
+import com.yhl.rest.param.user.FindPasswordParam;
+import com.yhl.rest.param.user.LoginParam;
+import com.yhl.rest.param.user.RegisterParam;
 
 /**
  * @author Lasy
