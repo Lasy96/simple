@@ -32,10 +32,13 @@ public class UserTest extends BasicTest {
 //        param.setNewPassword("123456");
 //        param.setPasswordAgain("123456");
 //        service.changePassword(param);
-        FindPasswordParam param = new FindPasswordParam();
-        param.setNikeName("林中夕阳");
-        param.setMail("1054795648@qq.com");
-        service.sendEmail(param);
+//        FindPasswordParam param = new FindPasswordParam();
+//        param.setNikeName("林中夕阳");
+//        param.setMail("1054795648@qq.com");
+//        service.sendEmail(param);
+        String phone = "18771632488";
+        String s = phone.replaceAll("(\\d{3})\\d{6}(\\d{2})","$1******$2");
+        System.out.println(s);
     }
 
 

@@ -9,8 +9,8 @@ public interface UserMapper {
     /**
      * 根据id查询用户
      *
-     * @param id
-     * @return
+     * @param id 用户id
+     * @return 用户信息
      */
     User getId(@Param("id") Integer id);
 
