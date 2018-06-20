@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/6/20 16:27
  */
 @ApiModel("文章添加参数")
