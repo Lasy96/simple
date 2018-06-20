@@ -6,7 +6,7 @@ import com.yhl.service.ArticleServiceI;
 import org.springframework.stereotype.Service;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/6/20 16:36
  */
 @Service("articleService")
