@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * @author Lasy
+ * @date 2018/6/22 13:57
+ */
 @SuppressWarnings({"rawtypes", "unchecked"})
 @Intercepts(
         @Signature(type = Executor.class, method = "query", args = {

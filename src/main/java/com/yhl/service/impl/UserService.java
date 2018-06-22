@@ -1,7 +1,7 @@
 package com.yhl.service.impl;
 
 import com.alibaba.dubbo.rpc.exception.DubboException;
-import com.yhl.framwork.utils.MD5Util;
+import com.yhl.framwork.utils.Md5Util;
 import com.yhl.framwork.utils.MailUtil;
 import com.yhl.framwork.utils.MathUtil;
 import com.yhl.model.dao.UserDao;
@@ -11,7 +11,7 @@ import com.yhl.rest.param.user.FindPasswordParam;
 import com.yhl.rest.param.user.LoginParam;
 import com.yhl.rest.param.user.RegisterParam;
 import com.yhl.service.UserServiceI;
-import com.yhl.utilConstant.MailConstant;
+import com.yhl.util.MailConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +45,7 @@ public class UserService implements UserServiceI {
         User user = new User();
         user.setName(param.getNikeName());
         user.setSalt(MathUtil.getRandomString(6, 1));
-        user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
+        user.setPassword(Md5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         user.setCreateTime(new Date());
         dao.register(user);
     }
@@ -73,13 +73,13 @@ public class UserService implements UserServiceI {
         loginParam.setNikeName(getId.getNikeName());
         loginParam.setPassword(param.getOldPassword());
         User loginCheckout = loginCheckout(loginParam);
-        if (StringUtils.equalsIgnoreCase(loginCheckout.getPassword(), MD5Util.getMD5ofStr(param.getNewPassword() + loginCheckout.getSalt()))) {
+        if (StringUtils.equalsIgnoreCase(loginCheckout.getPassword(), Md5Util.getMD5ofStr(param.getNewPassword() + loginCheckout.getSalt()))) {
             throw new DubboException("密码与最近一次密码相同!");
         }
         User user = new User();
         user.setId(param.getId());
         user.setSalt(MathUtil.getRandomString(6, 1));
-        user.setPassword(MD5Util.getMD5ofStr(param.getNewPassword() + user.getSalt()));
+        user.setPassword(Md5Util.getMD5ofStr(param.getNewPassword() + user.getSalt()));
         dao.changePassword(user);
     }
 
@@ -88,7 +88,9 @@ public class UserService implements UserServiceI {
         return dao.getId(id);
     }
 
-    // 获取用户名
+    /**
+     * 获取用户名
+     */
     public static String userName = null;
 
     @Override
@@ -100,7 +102,7 @@ public class UserService implements UserServiceI {
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
-        if (user.getMail().equals("") || !user.getMail().equals(param.getMail())) {
+        if ("".equals(user.getMail()) || !user.getMail().equals(param.getMail())) {
             throw new DubboException("邮箱不正确!");
         }
         Assert.notNull(param.getCode(), "验证码不能为空!");
@@ -111,7 +113,11 @@ public class UserService implements UserServiceI {
         return param;
     }
 
-    // 邮箱验证
+    /**
+     * 邮箱验证
+     *
+     * @param param 找回密码参数
+     */
     @Override
     public void sendEmail(FindPasswordParam param) {
         Assert.notNull(param, "参数不能为空!");
@@ -121,7 +127,7 @@ public class UserService implements UserServiceI {
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
-        if (user.getMail().equals("")) {
+        if ("".equals(user.getMail())) {
             throw new DubboException("该用户没有绑定邮箱!");
         }
         if (!user.getMail().equals(param.getMail())) {
@@ -146,7 +152,7 @@ public class UserService implements UserServiceI {
         User user = new User();
         user.setId(param.getId());
         user.setSalt(MathUtil.getRandomString(6, 1));
-        user.setPassword(MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
+        user.setPassword(Md5Util.getMD5ofStr(param.getPassword() + user.getSalt()));
         dao.changePassword(user);
     }
 
@@ -155,7 +161,7 @@ public class UserService implements UserServiceI {
         if (user == null) {
             throw new DubboException("用户不存在!");
         }
-        if (!StringUtils.equalsIgnoreCase(user.getPassword(), MD5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
+        if (!StringUtils.equalsIgnoreCase(user.getPassword(), Md5Util.getMD5ofStr(param.getPassword() + user.getSalt()))) {
             throw new DubboException("密码错误!");
         }
         return user;

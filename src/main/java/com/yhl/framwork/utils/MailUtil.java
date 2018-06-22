@@ -1,7 +1,7 @@
 package com.yhl.framwork.utils;
 
 
-import com.yhl.utilConstant.MailConstant;
+import com.yhl.util.MailConstant;
 
 import javax.mail.*;
 import javax.mail.Message.RecipientType;
@@ -36,6 +36,7 @@ public class MailUtil {
         properties.put("mail.password", MailConstant.PASSWORD);
         // 构建授权信息，用于进行SMTP进行身份验证
         Authenticator authenticator = new Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 // 用户名和密码
                 return new PasswordAuthentication(MailConstant.USER, MailConstant.PASSWORD);

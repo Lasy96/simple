@@ -45,6 +45,7 @@ public interface UserServiceI {
      * 找回密码
      *
      * @param param 找回密码参数
+     * @return FindPasswordParam 用于找回密码第二步
      */
     FindPasswordParam findPasswordOne(FindPasswordParam param);
 

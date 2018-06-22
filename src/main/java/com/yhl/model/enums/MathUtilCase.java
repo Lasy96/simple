@@ -4,17 +4,17 @@ import com.alibaba.dubbo.rpc.exception.DubboException;
 
 /**
  * @author Lasy
- * @date 2018/6/21 10:24
+ * @date 2018/6/22 13:51
  */
-public enum DeleteStatus {
+public enum MathUtilCase {
     /**
-     * 删除状态
+     * 随机数大小写
      */
-    未删除(0), 已删除(1);
+    小写(1), 大写(2);
 
     int code;
 
-    DeleteStatus(int code) {
+    MathUtilCase(int code) {
         this.code = code;
     }
 
@@ -22,8 +22,8 @@ public enum DeleteStatus {
         return code;
     }
 
-    public static DeleteStatus valueOf(Integer code) {
-        for (DeleteStatus cs : DeleteStatus.values()) {
+    public static MathUtilCase valueOf(Integer code) {
+        for (MathUtilCase cs : MathUtilCase.values()) {
             if (cs.getCode() == code) {
                 return cs;
             }

@@ -1,4 +1,4 @@
-package com.yhl.utilConstant;
+package com.yhl.util;
 
 import com.yhl.framwork.utils.MathUtil;
 import com.yhl.service.impl.UserService;

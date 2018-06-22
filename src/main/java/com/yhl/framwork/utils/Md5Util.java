@@ -6,7 +6,7 @@ import java.security.MessageDigest;
  * @author Lasy
  * @date 2018/5/28 16:56
  */
-public class MD5Util {
+public class Md5Util {
     /**
      * 获得MD5加密密码的方法
      */
@@ -62,14 +62,14 @@ public class MD5Util {
     /**
      * 密码验证方法
      */
-    public static boolean verifyPassword(String inputStr, String MD5Code) {
-        return getMD5ofStr(inputStr).equals(MD5Code);
+    public static boolean verifyPassword(String inputStr, String md5Code) {
+        return getMD5ofStr(inputStr).equals(md5Code);
     }
 
     /**
      * 重载一个多次加密时的密码验证方法
      */
-    public static boolean verifyPassword(String inputStr, String MD5Code, int times) {
-        return getMD5ofStr(inputStr, times).equals(MD5Code);
+    public static boolean verifyPassword(String inputStr, String md5Code, int times) {
+        return getMD5ofStr(inputStr, times).equals(md5Code);
     }
 }

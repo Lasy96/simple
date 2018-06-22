@@ -1,6 +1,7 @@
 package com.yhl.framwork.utils;
 
 import com.alibaba.dubbo.rpc.exception.DubboException;
+import com.yhl.model.enums.MathUtilCase;
 
 import java.util.Random;
 
@@ -17,12 +18,12 @@ public class MathUtil {
      * @return 结果
      */
     public static String getRandomString(int length, int type) {
-        if (type < 0) {
+        if (type < 1) {
             throw new DubboException("类型传入错误");
         }
-        if (type == 1) {
+        if (type == MathUtilCase.小写.getCode()) {
             return getRandomString(length, "abcdefghijklmnopqrstuvwxyz");
-        } else if (type == 2) {
+        } else if (type == MathUtilCase.大写.getCode()) {
             return getRandomString(length, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
         }
         return null;

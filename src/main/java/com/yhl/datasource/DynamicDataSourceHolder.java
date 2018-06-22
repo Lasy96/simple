@@ -8,21 +8,28 @@ public class DynamicDataSourceHolder {
     //写库对应的数据源key
 //    private static final String MASTER = "master";
 
-    // 写库对应的数据源key
+    /**
+     * 写库对应的数据源key
+     */
     public static final String MASTER = "master";
 
-    //读库对应的数据源key
+    /**
+     * 读库对应的数据源key
+     */
     private static final String SLAVE = "slave";
 
-    //使用ThreadLocal记录当前线程的数据源key
-    private static final ThreadLocal<String> holder = new ThreadLocal<String>();
+    /**
+     * 使用ThreadLocal记录当前线程的数据源key
+     */
+    private static final ThreadLocal<String> HOLDER = new ThreadLocal<String>();
 
     /**
      * 设置数据源key
      * @param key
      */
     public static void putDataSourceKey(String key) {
-        holder.set(key);
+        HOLDER.set(key);
+        HOLDER.remove();
     }
 
     /**
@@ -30,7 +37,7 @@ public class DynamicDataSourceHolder {
      * @return
      */
     public static String getDataSourceKey() {
-        return holder.get();
+        return HOLDER.get();
     }
 
     /**

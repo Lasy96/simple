@@ -22,10 +22,14 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
 
     private Integer slaveCount;
 
-    // 轮询计数,初始为-1,AtomicInteger是线程安全的
+    /**
+     * 轮询计数,初始为-1,AtomicInteger是线程安全的
+     */
     private AtomicInteger counter = new AtomicInteger(-1);
 
-    // 记录读库的key
+    /**
+     * 记录读库的key
+     */
     private List<Object> slaveDataSources = new ArrayList<Object>(0);
 
     @Override
@@ -50,10 +54,10 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
     @Override
     public void afterPropertiesSet() {
         super.afterPropertiesSet();
-
         // 由于父类的resolvedDataSources属性是私有的子类获取不到，需要使用反射获取
         Field field = ReflectionUtils.findField(AbstractRoutingDataSource.class, "resolvedDataSources");
-        field.setAccessible(true); // 设置可访问
+        // 设置可访问
+        field.setAccessible(true);
 
         try {
             Map<Object, DataSource> resolvedDataSources = (Map<Object, DataSource>) field.get(this);
@@ -78,10 +82,12 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
     public Object getSlaveKey() {
         // 得到的下标为：0、1、2、3……
         Integer index = counter.incrementAndGet() % slaveCount;
-        if (counter.get() > 9999) { // 以免超出Integer范围
-            counter.set(-1); // 还原
+        // 以免超出Integer范围
+        if (counter.get() > 9999) {
+            // 还原
+            counter.set(-1);
         }
-        LOGGER.info("当前的slave是"+(String) slaveDataSources.get(index));
+        LOGGER.info("当前的slave是" + slaveDataSources.get(index));
         return slaveDataSources.get(index);
     }
 }

@@ -55,8 +55,6 @@ public class MyCommentGenerator extends DefaultCommentGenerator {
                 field.addJavaDocLine(" * " + remarkLine);
             }
         }
-
-//        field.addJavaDocLine(" * " + introspectedColumn.getActualColumnName());
         field.addJavaDocLine(" */");
     }
 
