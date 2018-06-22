@@ -252,6 +252,7 @@ public class Article implements Serializable {
         sb.append(", title=").append(title);
         sb.append(", subheading=").append(subheading);
         sb.append(", content=").append(content);
+        sb.append(", user_id=").append(userId);
         sb.append(", author=").append(author);
         sb.append(", source=").append(source);
         sb.append(", type=").append(type);
@@ -283,6 +284,7 @@ public class Article implements Serializable {
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getSubheading() == null ? other.getSubheading() == null : this.getSubheading().equals(other.getSubheading()))
             && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getAuthor() == null ? other.getAuthor() == null : this.getAuthor().equals(other.getAuthor()))
             && (this.getSource() == null ? other.getSource() == null : this.getSource().equals(other.getSource()))
             && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
@@ -304,6 +306,7 @@ public class Article implements Serializable {
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getSubheading() == null) ? 0 : getSubheading().hashCode());
         result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getAuthor() == null) ? 0 : getAuthor().hashCode());
         result = prime * result + ((getSource() == null) ? 0 : getSource().hashCode());
         result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
