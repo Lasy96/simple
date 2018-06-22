@@ -3,7 +3,7 @@ package com.yhl.model.enums;
 import com.alibaba.dubbo.rpc.exception.DubboException;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/6/21 10:24
  */
 public enum DeleteStatus {
