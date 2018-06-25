@@ -40,7 +40,7 @@ public class UserService implements UserServiceI {
         }
         Integer getName = dao.getName(param.getNikeName());
         if (getName > 0) {
-            throw new DubboException("用户名已存在!");
+            throw new DubboException("用户名已注册!");
         }
         User user = new User();
         user.setName(param.getNikeName());

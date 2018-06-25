@@ -77,7 +77,7 @@ public class User implements Serializable {
     private Date updateTime;
 
     /**
-     * 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.超级会员)
+     * 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.编辑)
      */
     private Integer type;
 
@@ -329,9 +329,9 @@ public class User implements Serializable {
     }
 
     /**
-     * 获取用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.超级会员)
+     * 获取用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.编辑)
      *
-     * @return type - 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.超级会员)
+     * @return type - 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.编辑)
      */
     public Integer getType() {
         return type;
@@ -340,7 +340,7 @@ public class User implements Serializable {
     /**
      * 设置用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.超级会员)
      *
-     * @param type 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.超级会员)
+     * @param type 用户身份(0.吃瓜群众,1.普通会员,2.高级会员,3.编辑)
      */
     public void setType(Integer type) {
         this.type = type;
