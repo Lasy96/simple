@@ -3,7 +3,7 @@ package com.yhl.model.enums;
 import com.alibaba.dubbo.rpc.exception.DubboException;
 
 /**
- * @author 袁华
+ * @author Lasy
  * @date 2018/6/22 16:07
  */
 public enum UserType {
